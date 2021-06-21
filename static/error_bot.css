@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+body {
+	font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+.container {
+	padding: 10%;
+}
+
+.jumbotron {
+	background-color: #212529;
+	color: #ffffff;
+}

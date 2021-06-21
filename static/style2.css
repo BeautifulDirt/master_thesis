@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    animation: animate_fading 3s infinite;
+}
+
+@keyframes animate_fading {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 0.8;
+    }
+	50% {
+		opacity: 0.7;
+	}
+	75% {
+		opacity: 0.8;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.close {
+    color: #ffffff;
+}
+
+.close:hover, .close:focus, .close:visited {
+    color:#ffc107;
+}
+
+.modal-header {
+    border-bottom: 1px solid #000;
+}
+
+.modal-footer {
+    border-top: 1px solid #000;
+}
+
+.exampleModalLabel {
+    color: #9757ca;
+}

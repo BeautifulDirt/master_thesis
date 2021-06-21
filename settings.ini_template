@@ -1,0 +1,6 @@
+# подключение к базе данных MongoDB
+
+[database]
+host=
+port=
+db=

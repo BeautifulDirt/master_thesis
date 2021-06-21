@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управления чат-ботом</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="../static/style1.css">
+    <link rel="shortcut icon" href="../static/img/favicon.png" class="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <img class="mx-auto d-block" src="../static/img/logo.png" width="700" alt="logo">
+    <div class="container">
+        <div class="dropdown float-right">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+            Привет, <b class="text-warning">{{username}} {{userprofile['status']}}</b>
+          </button>
+          <div class="dropdown-menu">
+            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#mySettingsModal">Настройки</button>
+            <a class="dropdown-item" href="/logout">Выход</a>
+          </div>
+          <div class="modal fade bd-example-modal-lg" id="mySettingsModal" tabindex="-1" role="dialog" aria-labelledby="mySettingsModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header table-dark">
+                  <h5 class="modal-title exampleModalLabel">Настройки профиля <b class="text-warning">{{username}} {{userprofile['status']}}</b></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form class="needs-validation" action="/editSettings" method="POST" novalidate>
+                  <div class="modal-body table-dark">
+                    <div class="form-row">
+                      <div class="col mb-3">
+                        <p>Статус профиля: </p>
+                        <div class="form_radio_group">
+                          <div class="form_radio_group-item">        
+                            <input id="radio-0" type="radio" name="radio" value="0" disabled>
+                            <label for="radio-0">☺</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="😎" type="radio" name="radio" value="😎">        
+                            <label for="😎">😎</label>        
+                          </div>       
+                          <div class="form_radio_group-item">        
+                            <input id="🌴" type="radio" name="radio" value="🌴">        
+                            <label for="🌴">🌴</label>        
+                          </div>        
+                          <div class="form_radio_group-item">        
+                            <input id="🌿" type="radio" name="radio" value="🌿">        
+                            <label for="🌿">🌿</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="🐬" type="radio" name="radio" value="🐬">        
+                            <label for="🐬">🐬</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="🌎" type="radio" name="radio" value="🌎">        
+                            <label for="🌎">🌎</label>        
+                          </div>        
+                          <div class="form_radio_group-item">        
+                            <input id="😊" type="radio" name="radio" value="😊">        
+                            <label for="😊">😊</label>        
+                          </div>       
+                          <div class="form_radio_group-item">        
+                            <input id="🍕" type="radio" name="radio" value="🍕">        
+                            <label for="🍕">🍕</label>        
+                          </div>        
+                          <div class="form_radio_group-item">        
+                            <input id="⚽️" type="radio" name="radio" value="⚽️">        
+                            <label for="⚽️">⚽️</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="🌠" type="radio" name="radio" value="🌠">        
+                            <label for="🌠">🌠</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="💼" type="radio" name="radio" value="💼">        
+                            <label for="💼">💼</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="❤️" type="radio" name="radio" value="❤️">        
+                            <label for="❤️">❤️</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="🥑" type="radio" name="radio" value="🥑">        
+                            <label for="🥑">🥑</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="☕️" type="radio" name="radio" value="☕️">        
+                            <label for="☕️">☕️</label>        
+                          </div>
+                          <div class="form_radio_group-item">        
+                            <input id="🎓" type="radio" name="radio" value="🎓">        
+                            <label for="🎓">🎓</label>        
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col mb-3">
+                        <label for="validationCustom10">Токен VK</label>
+                        <input type="text" class="form-control" id="validationCustom10" name="vk-token" value="{{userprofile['vk_token']}}" autocomplete="off" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="col mb-3">
+                        <label for="validationCustom11">ID-Группы</label>
+                        <input type="text" class="form-control" id="validationCustom11" name="id-group" value="{{userprofile['id_group']}}" autocomplete="off" required>
+                      </div>
+                    </div>                  
+                  </div>
+                  <div class="modal-footer table-dark">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-default">Редактировать</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 class="text-warning">База данных ответов</h2>
+        <p>В этой таблице представлены все ответы, которыми будет отвечать ваш чат-бот:</p>            
+        <table class="table table-dark">
+          <thead>
+            <tr>
+                <th class="text-warning">Название вопроса</th>
+                <th class="text-warning">Текст ответа</th>
+                <th class="text-warning">Ключевое мета-слово</th>
+                <th class="text-warning">Ключевые слова</th>
+                <th></th>
+                <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for answer in answers%}
+            <tr>
+                <td>{{answer['name']}}</td>
+                <td>{{answer['text']}}</td>
+                <td>{{answer['categories']}}{%if answer['categories'] == '' %} - {%endif%}</td>
+                <td>{%for key in answer['keyword']%}{{key}}<br>{%endfor%}</td>
+                <td>
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myLargeModalLabel_{{answer['_id']}}" title="Редактировать">📝</button>
+                  <div class="modal fade bd-example-modal-lg" id="myLargeModalLabel_{{answer['_id']}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header table-dark">
+                          <h5 class="modal-title exampleModalLabel">Редактировать ответ</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form class="needs-validation" action="/editAnswer/{{answer['_id']}}/edit" method="POST" novalidate>
+                          <div class="modal-body table-dark">
+                            <div class="form-row">
+                              <div class="col mb-3">
+                                <label for="validationCustom01">Название ответа</label>
+                                <input type="text" class="form-control" id="validationCustom01" name="nameAnswer" placeholder="Название ответа" value="{{answer['name']}}" autocomplete="off" required>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col mb-3">
+                                <label for="validationCustom12">Текст ответа</label>
+                                <textarea class="form-control" id="validationCustom12" name="textAnswer" placeholder="Текст ответа" required>{{answer['text']}}</textarea>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col mb-3">
+                                <label for="{user name}">Подсказки: </label>
+                                <input type="button" class="btn btn-info" id="{user name}" value="Имя" onClick="javascript:daivalue('{user name}')">
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col mb-3">
+                                <label for="validationCustom03">Ключевое мета-слово</label>
+                                <input type="text" class="form-control" id="validationCustom03" name="metawordAnswer" placeholder="Ключевое мета-слово" value="{{answer['categories']}}{%if answer['categories'] == '' %} - {%endif%}" autocomplete="off" required>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="col mb-3">
+                                <label for="validationCustom04">Ключевые слова</label>
+                                <input type="text" class="form-control" id="validationCustom04" name="keywordAnswer" placeholder="Введите слова через запятую" value="{%for key in answer['keyword']%}{{key}}, {%endfor%}" autocomplete="off" required>
+                              </div>
+                            </div>                  
+                          </div>
+                          <div class="modal-footer table-dark">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                            <button type="submit" class="btn btn-default">Редактировать</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal_{{answer['_id']}}" title="Удалить">❌</button>
+                  <div class="modal fade" id="myModal_{{answer['_id']}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content table-dark">
+                          <div class="modal-header table-dark">
+                              <h5 class="modal-title exampleModalLabel">Удаление ответа</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body table-dark">
+                                Подтвердите удаление ответа <b class="text-warning">"{{answer['name']}}"</b>
+                            </div>
+                            <div class="modal-footer table-dark">
+                                <butter type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</butter>
+                                <form action="/answers/{{answer['_id']}}/delete" method="POST">
+                                    <button type="submit" class="btn btn-default">Удалить</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>    
+                  </div>
+                </td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+        <div id="contbot">
+            <form class="formbot" action="/start" method="POST">
+              <button type="submit" id="startbot" class="btn btn-default" onClick="javascript:radiobot(id)">Запустить чат-бот</button>
+            </form>
+            <form class="formbot" action="/stop" method="POST">
+              <button href="#" id="stopbot" class="btn btn-secondary" onClick="javascript:radiobot(id)" disabled>Остановить чат-бот</button>
+            </form> 
+        </div>
+        <button type="button" class="btn btn-success float-right" data-toggle="modal" data-target="#myNewAnswer">Добавить ответ</button>
+        <div class="modal fade bd-example-modal-lg" id="myNewAnswer"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header table-dark">
+                <h5 class="modal-title exampleModalLabel">Добавить новый ответ</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <form class="needs-validation" action="/addNewAnswer" method="POST" novalidate>
+                <div class="modal-body table-dark">
+                  <div class="form-row">
+                    <div class="col mb-3">
+                      <label for="validationCustom01">Название ответа</label>
+                      <input type="text" class="form-control" id="validationCustom01" name="nameAnswer" placeholder="Название ответа" autocomplete="off" required/>
+                      <div class="invalid-feedback">
+                        Пожалуйста, введите название ответа!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col mb-3">
+                      <label for="validationCustom02">Текст ответа</label>
+                      <textarea class="form-control" id="validationCustom02" name="textAnswer" placeholder="Текст ответа" required></textarea>
+                      <div class="invalid-feedback">
+                        Пожалуйста, введите текст ответа!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col mb-3">
+                      <label for="{user name}">Подсказки: </label>
+                      <input type="button" class="btn btn-info" id="{user name}" value="Имя" onClick="javascript:daivalue('validationCustom02')"/>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col mb-3">
+                      <label for="validationCustom03">Ключевое мета-слово</label>
+                      <input type="text" class="form-control" id="validationCustom03" name="metawordAnswer" placeholder="Ключевое мета-слово" value="-" autocomplete="off" required/>
+                      <div class="valid-feedback">
+                        Заполнено!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col mb-3">
+                      <label for="validationCustom04">Ключевые слова</label>
+                      <input type="text" class="form-control" id="validationCustom04" name="keywordAnswer" placeholder="Введите слова через запятую" autocomplete="off" required/>
+                      <div class="invalid-feedback">
+                        Пожалуйста, введите ключевые слова через запятую!
+                      </div>
+                    </div>
+                  </div>                  
+                </div>
+                <div class="modal-footer table-dark">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                  <button type="submit" class="btn btn-default">Добавить</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+
+        function daivalue (id) {
+		      document.getElementById(id).value += '{user name}';	
+        };
+
+        document.getElementById("{{userprofile['status']}}").checked = true;
+
+        function radiobot (id) {
+          if (id == "startbot"){
+            document.getElementById("startbot").disabled = true;
+            document.getElementById("stopbot").disabled = false;
+          } else {
+            document.getElementById("startbot").disabled = false;
+            document.getElementById("stopbot").disabled = true;
+          }
+        };
+
+      </script>
+</body>
+</html>
