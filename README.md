@@ -15,7 +15,7 @@
 - разработать чат-бот для предоставления ответов на запросы;
 - разработать веб-приложение для управления чат-ботом для предоставления ответов на запросы для сообществ в социальной сети Вконтакте.
 
-Полную презентацию о моём разрабатываемом программном продукте можете посмотреть [здесь](https://github.com/BeautifulDirt/master_thesis/blob/main/master_thesis_presentation.pdf). А сам текст магистерской диссертации можете почитать [тут](https://github.com/BeautifulDirt/master_thesis/blob/main/master_thesis_text.pdf).
+Полную презентацию о моём программном продукте можете посмотреть [здесь](https://github.com/BeautifulDirt/master_thesis/blob/main/master_thesis_presentation.pdf). А сам текст магистерской диссертации можете почитать [тут](https://github.com/BeautifulDirt/master_thesis/blob/main/master_thesis_text.pdf).
 
 Оригинальность работы составляет - **87.42%.**
 
